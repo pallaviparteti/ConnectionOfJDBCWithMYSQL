@@ -14,7 +14,8 @@ public class BaseClass {
 
 		listOfDrivers();
 		setUpDatabase();
-		
+		EmployeePayroll employeePayroll = new EmployeePayroll();
+		employeePayroll.retrieveEmployeePayrollData();
 	}
 
 	public static Connection setUpDatabase() {
