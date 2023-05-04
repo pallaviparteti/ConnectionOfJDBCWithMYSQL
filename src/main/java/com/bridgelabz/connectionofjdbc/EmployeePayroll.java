@@ -35,5 +35,22 @@ public class EmployeePayroll extends BaseClass {
 
 		System.out.println("Record added successfully");
 	}
+	public void updateEmployeePayrollData() throws SQLException {
+		connection = setUpDatabase();
+		String updateQuery = "update employeepayroll set salary = 3000000.00 WHERE name = 'Terrisa'";
+		PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+		preparedStatement.executeUpdate();
+		System.out.println("Record updated successfully");
+	}
+
+	public void updateWithPreparedStementEmployeePayrollData() throws SQLException {
+		connection = setUpDatabase();
+		String updateQuery = "update employeepayroll set salary = ? WHERE name = ?";
+		PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+		preparedStatement.setDouble(1, 3000000.00);
+		preparedStatement.setString(2, "Terrisa");
+		preparedStatement.executeUpdate();
+		System.out.println("Record updated successfully");
+	}
 }
 
