@@ -52,5 +52,14 @@ public class EmployeePayroll extends BaseClass {
 		preparedStatement.executeUpdate();
 		System.out.println("Record updated successfully");
 	}
+	public void deleteEmployeePayroll() throws SQLException {
+		connection = setUpDatabase();
+		String deleteQuery = "Delete from employeepayroll where id=?";
+		PreparedStatement preparedStatement = connection.prepareStatement(deleteQuery);
+		preparedStatement.setInt(1, 5);
+		preparedStatement.executeUpdate();
+		System.out.println("Record deleted successfully");
+	}
+
 }
 
