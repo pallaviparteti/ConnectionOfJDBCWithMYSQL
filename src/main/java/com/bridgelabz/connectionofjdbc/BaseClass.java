@@ -19,6 +19,7 @@ public class BaseClass {
 		employeePayroll.insertEmployeePayrollData();
 		employeePayroll.updateEmployeePayrollData();
 		employeePayroll.deleteEmployeePayroll();
+		employeePayroll.findDataBetweenGivenDateRange();
 	}
 
 	public static Connection setUpDatabase() {

@@ -61,5 +61,15 @@ public class EmployeePayroll extends BaseClass {
 		System.out.println("Record deleted successfully");
 	}
 
+	public void findDataBetweenGivenDateRange() throws SQLException {
+		connection = setUpDatabase();
+		String sumQuery = "select * from employeepayroll where date_info BETWEEN cast('2021-03-25' as Date) and DATE(NOW())";
+		Statement statement = connection.createStatement();
+		ResultSet count = statement.executeQuery(sumQuery);
+		while (count.next()) {
+			System.out.println("id " + count.getInt(1));
+			System.out.println("name " + count.getString(2));
+		}
+	}
 }
 
