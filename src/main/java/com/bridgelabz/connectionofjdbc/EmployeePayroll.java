@@ -71,5 +71,81 @@ public class EmployeePayroll extends BaseClass {
 			System.out.println("name " + count.getString(2));
 		}
 	}
+
+	public void sumOFGivenSalary() throws SQLException {
+		connection = setUpDatabase();
+		String sumOfQuery = "select SUM(salary) from employeepayroll where gender = 'M' group by gender";
+		Statement statement1 = connection.createStatement();
+		ResultSet counts = statement1.executeQuery(sumOfQuery);
+		while (counts.next()) {
+			System.out.println("id " + counts.getInt(1));
+			System.out.println("name " + counts.getString(2));
+			System.out.println("gender " + counts.getString(3));
+			System.out.println("salary " + counts.getDouble(4));
+			System.out.println("date_info " + counts.getString(5));
+		}
+		System.out.println("Record updated successfully" + counts);
+	}
+	public void minOFGivenSalary() throws SQLException {
+		connection = setUpDatabase();
+		String sumOfQuery = "select min(salary) from employeepayroll where gender = 'M' group by gender";
+		Statement statement1 = connection.createStatement();
+		ResultSet countMin = statement1.executeQuery(sumOfQuery);
+		while (countMin.next()) {
+			System.out.println("id " + countMin.getInt(1));
+			System.out.println("name " + countMin.getString(2));
+			System.out.println("gender " + countMin.getString(3));
+			System.out.println("salary " + countMin.getDouble(4));
+			System.out.println("date_info " + countMin.getString(5));
+		}
+		System.out.println("Record updated successfully" + countMin);
+	}
+
+	public void maxOFGivenSalary() throws SQLException {
+		connection = setUpDatabase();
+		String sumOfQuery = "select max(salary) from employeepayroll where gender = 'M' group by gender";
+		Statement statement1 = connection.createStatement();
+		ResultSet countMax = statement1.executeQuery(sumOfQuery);
+		while (countMax.next()) {
+			System.out.println("id " + countMax.getInt(1));
+			System.out.println("name " + countMax.getString(2));
+			System.out.println("gender " + countMax.getString(3));
+			System.out.println("salary " + countMax.getDouble(4));
+			System.out.println("date_info " + countMax.getString(5));
+		}
+		System.out.println("Record updated successfully" + countMax);
+	}
+	public void avrageOFGivenSalary() throws SQLException {
+		connection = setUpDatabase();
+		String sumOfQuery = "select avg(salary) from employeepayroll where gender = 'M' group by gender";
+		Statement statement1 = connection.createStatement();
+		ResultSet countAvrage = statement1.executeQuery(sumOfQuery);
+		while (countAvrage.next()) {
+			System.out.println("id " + countAvrage.getInt(1));
+			System.out.println("name " + countAvrage.getString(2));
+			System.out.println("gender " + countAvrage.getString(3));
+			System.out.println("salary " + countAvrage.getDouble(4));
+			System.out.println("date_info " + countAvrage.getString(5));
+		}
+		System.out.println("Record updated successfully" + countAvrage);
+	}
+	public void countOFGivenSalary() throws SQLException {
+		connection = setUpDatabase();
+		String sumOfQuery = "select count(salary) from employeepayroll where gender = 'M' group by gender";
+		Statement statement1 = connection.createStatement();
+		ResultSet count = statement1.executeQuery(sumOfQuery);
+		while (count.next()) {
+			System.out.println("id " + count.getInt(1));
+			System.out.println("name " + count.getString(2));
+			System.out.println("gender " + count.getString(3));
+			System.out.println("salary " + count.getDouble(4));
+			System.out.println("date_info " + count.getString(5));
+		}
+		System.out.println("Record updated successfully" + count);
+	}
+
+
+
 }
+
 

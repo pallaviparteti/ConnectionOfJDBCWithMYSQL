@@ -20,6 +20,11 @@ public class BaseClass {
 		employeePayroll.updateEmployeePayrollData();
 		employeePayroll.deleteEmployeePayroll();
 		employeePayroll.findDataBetweenGivenDateRange();
+		employeePayroll.sumOFGivenSalary();
+		employeePayroll.minOFGivenSalary();
+		employeePayroll.maxOFGivenSalary();
+		employeePayroll.avrageOFGivenSalary();
+		employeePayroll.countOFGivenSalary();
 	}
 
 	public static Connection setUpDatabase() {
